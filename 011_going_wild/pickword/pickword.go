@@ -1,29 +1,27 @@
 package pickword
 
 import (
-    "log"
 	"math/rand"
 	"os"
 	"bufio"
 )
 
 // Hello returns a greeting for the named person.
-func Pick() string {
-	dictPath := "../dict"
+func Pick(path string) (string, error) {
 
-	chosenFile, err := choseOneFile(dictPath)
+	chosenFile, err := choseOneFile(path)
 
 	if err != nil {
-        log.Fatal(err)
+        return "", err
     }
 
 	word, err := choseOneWord(chosenFile)
 
 	if err != nil {
-        log.Fatal(err)
+        return "", err
     }
 
-	return word
+	return word, nil
 }
 
 //chose one of the files from the given path

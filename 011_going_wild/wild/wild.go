@@ -4,13 +4,18 @@ package main
 import (
 	"fmt"
   "taylorshaulis/pickword"
+  "log"
   )
   
 
 func main() {
   fmt.Println("I am super wild")
-  word := pickword.Pick()
-  fmt.Println(word)
-  word = pickword.Pick()
-  fmt.Println(word)
+  dict := "../dict"
+  word, err := pickword.Pick(dict)
+  if err != nil {
+    log.Fatal(err)
+  } else {
+    fmt.Println(word)
+  }
+
 }
