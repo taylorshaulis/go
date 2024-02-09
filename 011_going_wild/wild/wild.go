@@ -11,4 +11,6 @@ func main() {
   fmt.Println("I am super wild")
   word := pickword.Pick()
   fmt.Println(word)
+  word = pickword.Pick()
+  fmt.Println(word)
 }
