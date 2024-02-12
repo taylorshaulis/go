@@ -21,4 +21,6 @@ func main() {
 	gimli.PrintWhoIs()
 	gandalf.PrintWhoIs()
 	fmt.Printf("The class of %v is %v.\n", gimli.Name, gimli.Class)
+	gandalf.Race = "Istari"
+	gandalf.PrintWhoIs()
 }
