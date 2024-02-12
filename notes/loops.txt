@@ -1,0 +1,24 @@
+Go only has a for loop which is actually really nice.
+
+for i := 0; i < 10; i++ {
+		sum += i
+	}
+
+We don't need anything around the conditions for the loop.
+
+The init and post statements are optional like this.
+for sum < 1000 {
+		sum += sum
+	}
+Notice we were able to drop the ';'
+
+You can even omit the condition to cause a forever loop.
+
+
+
+
+The range form of the for loop iterates over a slice or map.
+
+When ranging over a slice, two values are returned for each iteration. The first is the index, and the second is a copy of the element at that index.
+
+This is how we loop over slices and maps.

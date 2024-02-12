@@ -1,0 +1,63 @@
+The type []T is a slice with elements of type T.
+
+So its almost like the array syntax but we don't specify a size of the array.
+
+func main() {
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+
+	var s []int = primes[1:4]
+	fmt.Println(s)
+}
+
+[3 5 7]
+
+
+
+Slices are like references to arrays
+A slice does not store any data, it just describes a section of an underlying array.
+
+Changing the elements of a slice modifies the corresponding elements of its underlying array.
+
+Other slices that share the same underlying array will see those changes.
+
+func main() {
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names)
+
+	a := names[0:2]
+	b := names[1:3]
+	fmt.Println(a, b)
+
+	b[0] = "XXX"
+	fmt.Println(a, b)
+	fmt.Println(names)
+}
+
+[John Paul George Ringo]
+[John Paul] [Paul George]
+[John XXX] [XXX George]
+[John XXX George Ringo]
+
+So its just something built on top of something. Like how in k8s a deployment is on top of a replica set which is on top of pods.
+
+When you make a slice go is making an array for you under the hood.
+
+
+
+Dynamic slices need to be created with the make function.
+
+The make function allocates a zeroed array and returns a slice that refers to that array:
+
+b := make([]int, 0, 5) // len(b)=0, cap(b)=5
+make(type, length, capacity)
+
+
+
+The built in function append adds to the array.
+https://pkg.go.dev/builtin#append
+

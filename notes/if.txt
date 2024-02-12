@@ -1,0 +1,23 @@
+Go's if statements are like its for loops; the expression need not be surrounded by parentheses ( ) but the braces { } are required.
+
+if x < 0 {
+		return sqrt(-x) + "i"
+	}
+
+Like for, the if statement can start with a short statement to execute before the condition.
+
+Variables declared by the statement are only in scope until the end of the if.
+
+This does seem like it could help compact the code but not really sure why we would want to. This feels like it would hurt readability but hopefully I find a usecase for it.
+
+Variables declared inside an if short statement are also available inside any of the else blocks.
+This makes more sense now. If you need some temp variable for just the lifespan of the if statement then this is how you do it.
+
+if v := math.Pow(x, n); v < lim {
+		return v
+	} else {
+		fmt.Printf("%g >= %g\n", v, lim)
+	}
+
+
+

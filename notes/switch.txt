@@ -1,0 +1,19 @@
+Switches are almost the same as usual except.... we do not need a break statment which is just awesome.
+
+Switches also don't need a condition.
+
+func main() {
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good afternoon.")
+	default:
+		fmt.Println("Good evening.")
+	}
+}
+
+
+That is so clean looking.
+
